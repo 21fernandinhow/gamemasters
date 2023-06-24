@@ -1,0 +1,78 @@
+#games{
+    text-align: center;
+    min-height: 85vh;
+    padding: 20px;
+    .intro{
+        h2{
+            font-size: 2em;
+        }
+        p{
+            font-size: 1.2em;
+        }
+        margin-bottom: 20px;
+    }
+    .loader-box{
+        .loader{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            height: 70px;
+            width: 70px;
+            border: 6px solid var(--secondary-color);
+            border-top-color: var(--primary-color); 
+            border-radius: 100%;
+            animation: loader 0.8s infinite;
+        }
+        h3{
+            @extend .error-msg;
+        }
+
+    }
+    .error-msg{
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+    .game-list{
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;
+        .card{
+            width: 25%;
+            margin: 20px;
+            background-color: var(--terciary-color);
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+            border-radius: 40px;
+            img{
+                width: 100%;
+                border-radius: 40px 40px 0px 0px;
+            }
+            .info{
+                padding: 20px;
+                h3{
+                    font-size: 1.5em;
+                    color: var(--primary-color);
+                }
+                h4{
+                    font-size: 1em;
+                    color: var(--secondary-color);
+                    margin-bottom: 10px;
+                }
+            }
+            &:hover{
+                transform: translateY(-12px);
+                box-shadow: 0px 3px 5px var(--secondary-color);
+            }
+        }
+    }
+    
+}
+
+@keyframes loader {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(1turn);
+    }
+}

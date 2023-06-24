@@ -1,0 +1,18 @@
+footer{
+    @extend .flex-central;
+    min-height: 5vh;
+    background-color: var(--primary-color);
+    color: var(--terciary-color);
+    padding: 20px;
+    text-align: center;
+    a{
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--terciary-color);
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+            transition: 0.3s;
+        }
+    }
+}

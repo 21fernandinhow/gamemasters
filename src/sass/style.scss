@@ -1,0 +1,54 @@
+//Imports
+@import url('../assets/fonts/fonts.scss'); //This font isn't available on Google Fonts, so I had to do this.
+@import './header.scss';
+@import './games.scss';
+@import './footer.scss';
+@import './responsivity.scss';
+
+//Color Theme
+:root{
+    --primary-color: #537fe7;
+    --secondary-color: #98baf7;
+    --terciary-color: #fffafa;
+    --bg-color: #ededed;
+    --contrast-color: #111111;
+}
+
+//Extends
+.flex-central{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//General Items
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--contrast-color);
+    background-color: var(--bg-color);
+    font-family: monospace;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-color) var(--primary-color);
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               
+}
+body::-webkit-scrollbar-track {
+    background: var(--bg-color);        
+}  
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);    
+    border-radius: 20px;      
+    border: 1px solid var(--bg-color); 
+}
+
+::selection{
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+}

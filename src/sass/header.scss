@@ -1,0 +1,16 @@
+header{
+    @extend .flex-central;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    min-height: 10vh;
+    padding: 10px;
+    color: var(--terciary-color);
+    background-color: var(--primary-color);
+    img{
+        margin: 10px;
+    }
+    h1{
+        font-family: 'FilsonPro', monospace;
+    }
+}

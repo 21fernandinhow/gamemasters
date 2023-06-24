@@ -1,0 +1,164 @@
+@import url("../assets/fonts/fonts.scss");
+header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  min-height: 10vh;
+  padding: 10px;
+  color: var(--terciary-color);
+  background-color: var(--primary-color);
+}
+header img {
+  margin: 10px;
+}
+header h1 {
+  font-family: "FilsonPro", monospace;
+}
+
+#games {
+  text-align: center;
+  min-height: 85vh;
+  padding: 20px;
+}
+#games .intro {
+  margin-bottom: 20px;
+}
+#games .intro h2 {
+  font-size: 2em;
+}
+#games .intro p {
+  font-size: 1.2em;
+}
+#games .loader-box .loader {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  height: 70px;
+  width: 70px;
+  border: 6px solid var(--secondary-color);
+  border-top-color: var(--primary-color);
+  border-radius: 100%;
+  animation: loader 0.8s infinite;
+}
+#games .error-msg, #games .loader-box h3 {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+#games .game-list {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#games .game-list .card {
+  width: 25%;
+  margin: 20px;
+  background-color: var(--terciary-color);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+}
+#games .game-list .card img {
+  width: 100%;
+  border-radius: 40px 40px 0px 0px;
+}
+#games .game-list .card .info {
+  padding: 20px;
+}
+#games .game-list .card .info h3 {
+  font-size: 1.5em;
+  color: var(--primary-color);
+}
+#games .game-list .card .info h4 {
+  font-size: 1em;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+#games .game-list .card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0px 3px 5px var(--secondary-color);
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+footer {
+  min-height: 5vh;
+  background-color: var(--primary-color);
+  color: var(--terciary-color);
+  padding: 20px;
+  text-align: center;
+}
+footer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--terciary-color);
+  cursor: pointer;
+}
+footer a:hover {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+@media (max-width: 510px) {
+  #games .game-list .card {
+    width: 100% !important;
+  }
+}
+@media (max-width: 769px) {
+  #games .game-list .card {
+    width: 40%;
+  }
+}
+:root {
+  --primary-color: #537fe7;
+  --secondary-color: #98baf7;
+  --terciary-color: #fffafa;
+  --bg-color: #ededed;
+  --contrast-color: #111111;
+}
+
+.flex-central, header, footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--contrast-color);
+  background-color: var(--bg-color);
+  font-family: monospace;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-color) var(--primary-color);
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border: 1px solid var(--bg-color);
+}
+
+::selection {
+  background-color: var(--secondary-color);
+  color: var(--bg-color);
+}
+
+/*# sourceMappingURL=style.css.map */
