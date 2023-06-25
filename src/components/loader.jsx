@@ -3,7 +3,7 @@ function Loader (props) {
     if(props.data.length>0){
         return(
             <div className="loader-box">
-                <h3>Nenhum jogo foi encontrado</h3>
+                <h3 data-aos="fade-up" data-aos-duration="1000">Nenhum jogo foi encontrado</h3>
             </div>
         );
     } else {

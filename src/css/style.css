@@ -74,38 +74,56 @@ header img:hover, header h1:hover {
   font-size: 1.5em;
   font-weight: bolder;
 }
-#games .game-list {
+#games .games-list {
   display: flex;
   align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
 }
-#games .game-list .card {
+#games .games-list .card {
   width: 25%;
   margin: 20px;
   background-color: var(--terciary-color);
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
   border-radius: 40px;
 }
-#games .game-list .card img {
+#games .games-list .card img {
   width: 100%;
   border-radius: 40px 40px 0px 0px;
 }
-#games .game-list .card .info {
+#games .games-list .card .info {
   padding: 20px;
 }
-#games .game-list .card .info h3 {
+#games .games-list .card .info h3 {
   font-size: 1.5em;
   color: var(--primary-color);
 }
-#games .game-list .card .info h4 {
+#games .games-list .card .info h4 {
   font-size: 1em;
   color: var(--secondary-color);
   margin-bottom: 10px;
 }
-#games .game-list .card:hover {
+#games .games-list .card:hover {
   transform: translateY(-12px);
   box-shadow: 0px 3px 5px var(--secondary-color);
+}
+#games nav {
+  flex-wrap: wrap;
+}
+#games nav button {
+  margin: 10px;
+  padding: 8px 16px;
+  background-color: var(--terciary-color);
+  border-radius: 20px;
+  border: none;
+  box-shadow: 2px 2px 3px var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: bolder;
+}
+#games nav button:hover {
+  background-color: var(--primary-color);
+  color: var(--terciary-color);
+  transition: 0.4s;
 }
 
 footer {
@@ -146,12 +164,12 @@ footer a:hover {
   }
 }
 @media (max-width: 510px) {
-  #games .game-list .card {
+  #games .games-list .card {
     width: 100% !important;
   }
 }
 @media (max-width: 769px) {
-  #games .game-list .card {
+  #games .games-list .card {
     width: 40%;
   }
 }
@@ -163,7 +181,7 @@ footer a:hover {
   --contrast-color: #111111;
 }
 
-.flex-central, header, header a, footer {
+.flex-central, header, header a, #games nav, footer {
   display: flex;
   align-items: center;
   justify-content: center;

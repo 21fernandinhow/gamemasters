@@ -8,7 +8,7 @@ function Games(){
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
     const [search, setSearch] = useState('');
-    const [filterGenre, setGenreFilter] = useState('Shooter');
+    const [gamesShowing, setGamesShowing] = useState(0);
     
     const lowerCaseSearch = search.toLowerCase();
     const filterData = data.filter(item => item.title.toLowerCase().includes(lowerCaseSearch));
@@ -70,7 +70,10 @@ function Games(){
                     placeholder='Buscar Jogo' 
                     type="text" 
                     value={search}
-                    onChange={(ev) => setSearch(ev.target.value)}
+                    onChange={(ev) => {
+                        setSearch(ev.target.value)
+                        setGamesShowing(0)
+                    }}
                     id="search" 
                 />
             </div>
@@ -78,17 +81,29 @@ function Games(){
             {error ? (
                 <p className='error-msg' data-aos="fade-up" data-aos-duration="1000">{error}</p>
             ) : filterData.length > 0 ? (
-                <div className='game-list'>
-                    {filterData.map((item) => (
-                        <Card 
-                            key={item.id} 
-                            img={item.thumbnail} 
-                            title={item.title}
-                            genre={item.genre}
-                            text={item.short_description}
-                        />
-                    ))}
-                </div>
+                <>
+                    <div className='games-list'>
+                        {filterData.slice(gamesShowing, gamesShowing+12).map((item) => (
+                            <Card 
+                                key={item.id} 
+                                img={item.thumbnail} 
+                                title={item.title}
+                                genre={item.genre}
+                                text={item.short_description}
+                            />
+                        ))}
+                    </div>
+                    {filterData.length > 12 ? (
+                        <nav>
+                            {gamesShowing>=12 ? (
+                                <button onClick={()=>setGamesShowing(gamesShowing-12)}>Página Anterior</button>
+                            ):null}
+                            {gamesShowing+12 < filterData.length ? (
+                                <button onClick={()=>setGamesShowing(gamesShowing+12)}>Próxima Página</button>
+                            ):null}
+                        </nav>
+                    ):null}
+                </>
             ) : (
                 <Loader data={data}/>
             )}
