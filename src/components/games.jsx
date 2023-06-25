@@ -24,6 +24,7 @@ function Games(){
                 if(response.ok){
                     const responseData = await response.json();
                     setData(responseData);
+                    console.log(data)
                 } else {
                     throw new Error(response.status);
                 };
@@ -54,7 +55,6 @@ function Games(){
               })
             ]);
         }
-          
 
         getData();
     }, []);
@@ -64,7 +64,7 @@ function Games(){
 
             <div className='intro'>
                 <h2>Bem-vindo(a) ao Game Masters!</h2>
-                <p>Aqui você encontra os nossos jogos favoritos</p>
+                <p>Aqui você encontra uma coletânia de jogos para você jogar</p>
                 <label htmlFor="search"><ImSearch/></label>
                 <input 
                     placeholder='Buscar Jogo' 
@@ -81,8 +81,10 @@ function Games(){
             {error ? (
                 <p className='error-msg' data-aos="fade-up" data-aos-duration="1000">{error}</p>
             ) : filterData.length > 0 ? (
+
                 <>
                     <div className='games-list'>
+
                         {filterData.slice(gamesShowing, gamesShowing+12).map((item) => (
                             <Card 
                                 key={item.id} 
@@ -90,9 +92,12 @@ function Games(){
                                 title={item.title}
                                 genre={item.genre}
                                 text={item.short_description}
+                                url={item.game_url}
                             />
                         ))}
+
                     </div>
+
                     {filterData.length > 12 ? (
                         <nav>
                             {gamesShowing>=12 ? (
@@ -103,6 +108,7 @@ function Games(){
                             ):null}
                         </nav>
                     ):null}
+                    
                 </>
             ) : (
                 <Loader data={data}/>
