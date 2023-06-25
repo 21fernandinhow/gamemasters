@@ -7,5 +7,5 @@ Utilizei o PageSpeed (do Google) para analisar a performance da página e tive e
 Confira algumas imagens:
 
 <img src="./print1.jpeg" alt="print_do_site">
-<img src="./print2.jpeg" alt="desempenho_mobile">
-<img src="./print3.jpeg" alt="desempenho_desktop">
+<img src="./print2.jpeg" alt="desempenho_desktop">
+<img src="./print3.jpeg" alt="desempenho_mobile">
