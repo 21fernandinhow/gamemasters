@@ -1,5 +1,6 @@
 //Imports
 @import url('../assets/fonts/fonts.scss'); //This font isn't available on Google Fonts, so I had to do this.
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); //This is from Google Fonts =)
 @import './header.scss';
 @import './games.scss';
 @import './footer.scss';
@@ -28,10 +29,15 @@
     box-sizing: border-box;
 }
 
+
+html {
+    scroll-behavior: smooth;
+} 
+
 body{
     color: var(--contrast-color);
     background-color: var(--bg-color);
-    font-family: monospace;
+    font-family: 'Roboto', sans-serif;
     scrollbar-width: thin;
     scrollbar-color: var(--bg-color) var(--primary-color);
 }

@@ -5,12 +5,21 @@ header{
     z-index: 99;
     min-height: 10vh;
     padding: 10px;
-    color: var(--terciary-color);
     background-color: var(--primary-color);
+    a{
+        @extend .flex-central;
+        color: var(--terciary-color);
+        text-decoration: none;
+        cursor: pointer;
+    }
     img{
         margin: 10px;
     }
     h1{
         font-family: 'FilsonPro', monospace;
+    }
+    img:hover,h1:hover{
+        scale: 1.05;
+        transition: 0.4s;
     }
 }

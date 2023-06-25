@@ -1,18 +1,27 @@
 @import url("../assets/fonts/fonts.scss");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 header {
   position: sticky;
   top: 0;
   z-index: 99;
   min-height: 10vh;
   padding: 10px;
-  color: var(--terciary-color);
   background-color: var(--primary-color);
+}
+header a {
+  color: var(--terciary-color);
+  text-decoration: none;
+  cursor: pointer;
 }
 header img {
   margin: 10px;
 }
 header h1 {
   font-family: "FilsonPro", monospace;
+}
+header img:hover, header h1:hover {
+  scale: 1.05;
+  transition: 0.4s;
 }
 
 #games {
@@ -21,13 +30,30 @@ header h1 {
   padding: 20px;
 }
 #games .intro {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 #games .intro h2 {
   font-size: 2em;
 }
 #games .intro p {
   font-size: 1.2em;
+}
+#games .intro label {
+  font-size: 1.2em;
+  margin-right: 10px;
+  font-weight: bold;
+  color: var(--primary-color);
+  vertical-align: bottom;
+}
+#games .intro input {
+  margin-top: 20px;
+  padding: 7px 14px;
+  border: none;
+  outline: none;
+  max-width: 180px;
+  border-radius: 15px;
+  background-color: var(--terciary-color);
+  box-shadow: 0px 2px 3px var(--secondary-color);
 }
 #games .loader-box .loader {
   margin-left: auto;
@@ -39,6 +65,13 @@ header h1 {
   border-top-color: var(--primary-color);
   border-radius: 100%;
   animation: loader 0.8s infinite;
+}
+#games .loader-box .loader:hover {
+  scale: 1.1;
+  transition: 0.3s;
+}
+#games .loader-box h3 {
+  animation: float 1s ease-in-out infinite;
 }
 #games .error-msg, #games .loader-box h3 {
   font-size: 1.5em;
@@ -86,6 +119,17 @@ header h1 {
     transform: rotate(1turn);
   }
 }
+@keyframes float {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
 footer {
   min-height: 5vh;
   background-color: var(--primary-color);
@@ -122,7 +166,7 @@ footer a:hover {
   --contrast-color: #111111;
 }
 
-.flex-central, header, footer {
+.flex-central, header, header a, footer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,10 +178,14 @@ footer a:hover {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--contrast-color);
   background-color: var(--bg-color);
-  font-family: monospace;
+  font-family: "Roboto", sans-serif;
   scrollbar-width: thin;
   scrollbar-color: var(--bg-color) var(--primary-color);
 }

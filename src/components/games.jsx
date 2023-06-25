@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ImSearch} from 'react-icons/im'
 import Loader from './loader';
 import Card from "./card";
 
@@ -6,6 +7,11 @@ function Games(){
 
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
+    const [search, setSearch] = useState('');
+    const [filterGenre, setGenreFilter] = useState('Shooter');
+    
+    const lowerCaseSearch = search.toLowerCase();
+    const filterData = data.filter(item => item.title.toLowerCase().includes(lowerCaseSearch));
 
     useEffect(() => {
         const getData = async () => {
@@ -55,27 +61,38 @@ function Games(){
 
     return(
         <main id='games'>
+
             <div className='intro'>
-                <h2>Bem-vindo(a) ao Game Masters</h2>
-                <p>Aqui você encontra os nossos jogos favoritos!</p>
-            </div>
-        {error ? (
-            <p className='error-msg'>Ocorreu um erro: {error}</p>
-        ) : data.length > 0 ? (
-            <div className='game-list'>
-            {data.map((item) => (
-                <Card 
-                    key={item.id} 
-                    img={item.thumbnail} 
-                    title={item.title}
-                    genre={item.genre}
-                    text={item.short_description}
+                <h2>Bem-vindo(a) ao Game Masters!</h2>
+                <p>Aqui você encontra os nossos jogos favoritos</p>
+                <label htmlFor="search"><ImSearch/></label>
+                <input 
+                    placeholder='Buscar Jogo' 
+                    type="text" 
+                    value={search}
+                    onChange={(ev) => setSearch(ev.target.value)}
+                    id="search" 
                 />
-            ))}
             </div>
-        ) : (
-        <Loader/>
-      )}
+
+            {error ? (
+                <p className='error-msg' data-aos="fade-up" data-aos-duration="1000">Ocorreu um erro: {error}</p>
+            ) : filterData.length > 0 ? (
+                <div className='game-list'>
+                    {filterData.map((item) => (
+                        <Card 
+                            key={item.id} 
+                            img={item.thumbnail} 
+                            title={item.title}
+                            genre={item.genre}
+                            text={item.short_description}
+                        />
+                    ))}
+                </div>
+            ) : (
+                <Loader data={data}/>
+            )}
+
         </main>
     );
 };
