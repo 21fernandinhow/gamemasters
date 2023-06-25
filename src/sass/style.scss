@@ -4,6 +4,7 @@
 @import './header.scss';
 @import './games.scss';
 @import './footer.scss';
+@import './animations.scss';
 @import './responsivity.scss';
 
 //Color Theme
@@ -56,5 +57,9 @@ body::-webkit-scrollbar-thumb {
 
 ::selection{
     background-color: var(--secondary-color);
-    color: var(--bg-color);
+    color: var(--terciary-color);
+}
+
+.float{
+    animation: float 1s ease-in-out infinite;
 }

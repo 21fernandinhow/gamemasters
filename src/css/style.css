@@ -70,9 +70,6 @@ header img:hover, header h1:hover {
   scale: 1.1;
   transition: 0.3s;
 }
-#games .loader-box h3 {
-  animation: float 1s ease-in-out infinite;
-}
 #games .error-msg, #games .loader-box h3 {
   font-size: 1.5em;
   font-weight: bolder;
@@ -87,7 +84,7 @@ header img:hover, header h1:hover {
   width: 25%;
   margin: 20px;
   background-color: var(--terciary-color);
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
   border-radius: 40px;
 }
 #games .game-list .card img {
@@ -111,6 +108,24 @@ header img:hover, header h1:hover {
   box-shadow: 0px 3px 5px var(--secondary-color);
 }
 
+footer {
+  min-height: 5vh;
+  background-color: var(--primary-color);
+  color: var(--terciary-color);
+  padding: 20px;
+  text-align: center;
+}
+footer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--terciary-color);
+  cursor: pointer;
+}
+footer a:hover {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
 @keyframes loader {
   0% {
     transform: rotate(0);
@@ -130,24 +145,6 @@ header img:hover, header h1:hover {
     transform: translateY(5px);
   }
 }
-footer {
-  min-height: 5vh;
-  background-color: var(--primary-color);
-  color: var(--terciary-color);
-  padding: 20px;
-  text-align: center;
-}
-footer a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--terciary-color);
-  cursor: pointer;
-}
-footer a:hover {
-  text-decoration: underline;
-  transition: 0.3s;
-}
-
 @media (max-width: 510px) {
   #games .game-list .card {
     width: 100% !important;
@@ -206,7 +203,11 @@ body::-webkit-scrollbar-thumb {
 
 ::selection {
   background-color: var(--secondary-color);
-  color: var(--bg-color);
+  color: var(--terciary-color);
+}
+
+.float {
+  animation: float 1s ease-in-out infinite;
 }
 
 /*# sourceMappingURL=style.css.map */

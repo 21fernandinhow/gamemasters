@@ -76,7 +76,7 @@ function Games(){
             </div>
 
             {error ? (
-                <p className='error-msg' data-aos="fade-up" data-aos-duration="1000">Ocorreu um erro: {error}</p>
+                <p className='error-msg' data-aos="fade-up" data-aos-duration="1000">{error}</p>
             ) : filterData.length > 0 ? (
                 <div className='game-list'>
                     {filterData.map((item) => (

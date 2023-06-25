@@ -10,7 +10,7 @@ function Loader (props) {
         return(
             <div className="loader-box">
                 <div className="loader"></div>
-                <h3>Aguardando dados...</h3>
+                <h3 className="float">Aguardando dados...</h3>
             </div>
         );
     };
